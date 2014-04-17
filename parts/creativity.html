@@ -1,0 +1,80 @@
+<!--
+  ~ /*******************************************************************************
+  ~  jquery.mb.components
+  ~  file: extr.creativity.html
+  ~
+  ~  Copyright (c) 2001-2013. Matteo Bicocchi (Pupunzi);
+  ~  Open lab srl, Firenze - Italy
+  ~  email: matteo@open-lab.com
+  ~  site: 	http://pupunzi.com
+  ~  blog:	http://pupunzi.open-lab.com
+  ~ 	http://open-lab.com
+  ~
+  ~  Licences: MIT, GPL
+  ~  http://www.opensource.org/licenses/mit-license.php
+  ~  http://www.gnu.org/licenses/gpl.html
+  ~
+  ~  last modified: 02/10/13 22.42
+  ~  ******************************************************************************/
+-->
+
+<div class="panel panel-default" ng-show="showEditor()" >
+             
+    <div class="ss-formwidget-container-editor" >
+              <div  class="ss-formwidget-topright-actions ss-widget-nodrag" style="pull-right">
+                    <div role="button" id=":ee.fw_eal" class="goog-inline-block jfk-button jfk-button-standard jfk-button-narrow jfk-button-checked" tabindex="0" data-tooltip="Edit" aria-label="Edit" aria-pressed="true" style="-webkit-user-select: none;">
+                        <div class="docs-icon goog-inline-block ">
+                            <div class="docs-icon-img-container docs-icon-img docs-icon-mode-edit" aria-hidden="true" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div role="button" id=":ee.fw_dq" class="goog-inline-block jfk-button jfk-button-standard jfk-button-narrow" tabindex="0" data-tooltip="Duplicate" aria-label="Duplicate" style="-webkit-user-select: none;">
+                        <div class="docs-icon goog-inline-block ">
+                            <div class="docs-icon-img-container docs-icon-img docs-icon-duplicate" aria-hidden="true">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div role="button" id=":ee.fw_rmb" class="goog-inline-block jfk-button jfk-button-standard jfk-button-narrow" tabindex="0" data-tooltip="Delete" aria-label="Delete" style="-webkit-user-select: none;">
+                        <div class="docs-icon goog-inline-block ">
+                            <div class="docs-icon-img-container docs-icon-img docs-icon-trash" aria-hidden="true">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>  
+        <div class="ss-formwidget-div" >
+            <div class="ss-formwidget-draghandle"></div>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    
+                    <div >
+                        <input type="text" class="form-control input-sm" id="qTitle"  ng-model="question" placeholder="Untitled Question">
+                    </div>
+                </div>
+                <div class="form-group">
+                  
+                    <div >
+                        <input type="text" class="form-control input-sm" id="helptext" placeholder="Add Help Text">
+                    </div>
+                </div>
+                <div class="form-group">
+                   
+                    <div >
+                        <select name="questionCategory" onchange="submitPreview()" id="types" class="form-control" >
+                            <option value="{{type.value}}" ng-repeat="type in questionsTypes"  class="textSmallBold"  >{{type.type}} </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                        <button class="btn btn-primary" ng-click="addQuestion()">
+                            Add a question
+                        </button>  
+                        <button class="btn btn-primary" ng-click="showEditor()">
+                            Configure
+                        </button> 
+                    <button type="submit" class="btn btn-info" ng-click="closer()">Done</button>
+                   
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

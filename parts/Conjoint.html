@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>QuestionPro Online Survey Software Application</title>
+        <script src="/javascript/jquery-1.7.1.min.js"></script>
+        <script src="/javascript/jquery-ui.min.js"></script>
+        <script src="/javascript/jscolor/jscolor.js"></script>
+        <link rel="stylesheet" href="/stylesheets/jquery-ui.css"/>
+
+        <script language="JavaScript" src="/javascript/global.js?version=21"></script>
+
+        <link rel="stylesheet" type="text/css" href="http://www.questionpro.com/stylesheets/sitestyle.css"/>
+        <link rel="stylesheet" type="text/css" href="http://www.questionpro.com/stylesheets/common.css"/>
+        <link rel="shortcut icon" href="/images/qphome/favicon.ico"/>
+
+        <SCRIPT>
+            function submitPreview() {
+                document.forms[0].preview.value = "true";
+                document.forms[0].submit();
+            }
+        </SCRIPT>
+    </head>
+    <body>
+
+<div  id="randomizerPreview" style=";">
+
+<table ALIGN="CENTER" WIDTH="95%" class="grid">
+  <tr class="text">
+   <td colspan=2>
+     <B>
+     Randomizer can be implemented to perform the following:
+     </B>
+   </td>
+  </tr>
+  <tr class="text">
+   <td width=180>
+    &nbsp;&nbsp;<B>Single Question Display</B> 
+   </td>
+   <td>
+    The randomizer selects <b>one</b> question from a <B>pre-defined list</B> of questions and displays it.
+   </td>
+  </tr>    
+
+  <tr class="text">
+   <td>  
+    &nbsp;&nbsp;<B>Block Rotation</B> 
+   </td>
+   <td>
+   The randomizer will display <b>all</b> questions from a <b>pre-defined list</b> 
+   of questions. The order of the questions will be randomized.
+   </td>
+      
+  </tr>
+</table>
+
+
+</div>
+
+<div  id="conjointPreview" style=";">
+
+<table class="grid" width="95%" align="center">
+
+  <tr class="text">
+   <td COLspan="2">
+   <B>Conjoint</B>
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td>
+    <B>Self-Explicated Model</B>
+   </td>
+   <td>
+    In this model, the respondents are asked <B>direct</B> questions about the desireablity of 
+    a particular list of products and profiles. 
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div  id="conjointCBCPreview" style=";">
+
+<table class="grid" width="97%" align="center">
+
+  <tr class="text">
+   <td COLspan="2">
+   <B>Conjoint</B>
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td>
+    <B>Discrete Choice </B>
+   </td>
+   <td>
+    Here respondents are asked to choose between multiple products and the relative weights for each 
+    of the attributes are calculated indirectly
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div  id="conjointACAPreview" style=";">
+
+<table class="grid" width="95%" align="center">
+
+  <tr class="text">
+   <td COLspan="2">
+   <B>Conjoint</B>
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td>
+    <B>Ratings Based Conjoint </B>
+   </td>
+   <td>
+    Here respondents are asked to <B>Rate</B> the likelyhood of purchase for two products at a time. 
+
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div  id="scriptPreview" style=";">
+
+<table ALIGN="CENTER" WIDTH="95%" class="grid">
+  <tr class="text">
+   <td >
+     <B>
+     Custom Scripts
+     </B>
+   </td>
+  </tr>
+  <tr class="text">
+   <td >
+     Custom Scripts enable you to setup <B>delayed branching</B>. Delayed branching
+     is basically <B>programmed logic</B> which decides weather to <B>display/skip</B>
+     questions based on answers to <B>previous</B> questions. 
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td >
+    For example, lets assume you have 3 options for Q1
+    <BR>&nbsp;&nbsp;Q1. Please select one option:
+     <UL>
+      <LI>A</LI>
+      <LI>B</LI>
+      <LI>C</LI>
+     </UL>
+    Now say, you wish to display Q21 if  Q1 = A. <Br>
+    <br>
+    <B>
+    #if ( ${Q1} == 1 )
+        <br>
+        $survey.branchTo("Q21")
+        <br>
+    #end
+    </B>
+   </td>
+  </tr>
+</table>
+
+
+</div>
+
+<div  id="attachFilePreview" style=";">
+
+<table ALIGN="CENTER" WIDTH="50%" class="grid">
+
+  <tr class="text">
+   <td >
+     <B>
+     Attach File
+     </B>
+   </td>
+  </tr>
+  <tr class="text">
+   <td class="QuestionText"  STYLE="font-size:9pt; font-family:Arial;">
+   Please attach file with your response <br>
+   <input type="file" name="demo">
+   <br>
+   <input type="button" value="Upload File">
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div id="MDMPreview" style=";">
+
+<table ALIGN="CENTER">
+  <tr>
+        <td></td>
+        <td colspan="5">
+        <table width="100%">
+          <tr>
+            <td colspan="3" align="center" class="textSmallBold">Importance</td>
+          </tr>
+          <tr>
+            <td width="33%">Not Important</td>
+            <td align="center" width="33%"></td>
+            <td align="right">Very Important</td>
+          </tr>                
+        </table>
+        </td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td colspan="5">
+        <table width="100%">
+          <tr>
+            <td colspan="3" align="center" class="textSmallBold">Satisfaction</td>
+          </tr>
+          <tr>
+            <td width="33%">Not Satisfied</td>
+            <td align="center" width="33%"></td>
+            <td align="right">Very Satisfied</td>
+          </tr>                
+        </table>
+        </td>        
+  </td>
+  <tr>
+        <td></td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+  <tr>
+        <td>Measurement Item #1</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+  <tr>
+        <td>Measurement Item #2</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+  <tr>
+        <td>Measurement Item #3</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+  <tr>
+        <td>Measurement Item #4</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9px"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div id="tubepulsePreview" style="">
+  
+<div align="center">
+  <img src="/images/tubePulse.jpg"/>
+</div>
+
+</div>
+
+
+<div id="lookupTablePreview" style="">
+  <div>
+The <b>Lookup Table</b> question type allows you to create heirarchial menus easily. Currently we've limited it to two dimensions - Parent&raquo;Child relationships. 
+</div>
+
+<select>
+  <option>Select--</option>
+  <option>West Coast</option>
+  <option>Mountain West</option>
+  <option>Other</option>
+</select>
+
+
+
+</div>
+
+
+<div id="referenceDataPreview" style="">
+  
+<div align="center">
+  <img src="/images/referenceData.jpg"/>
+</div>
+
+
+</div>
+
+
+<div id="displayAdvancedQuestionPreview" style=";">
+</div>
+
+<!-- END /jsp/builder/popupAddQuestion.jsp -->
+
+
+
+
+
+
+
+  <div align="center" style="padding-top: 5px;"> 
+    <form>
+      <a href="javascript:window.close()"><img src="/images/btn_close.gif" border="0" alt="Close Window"></A>
+    </form>
+  </div>
+
+
+
+
+
+
+
+<div id="inlinePopupSpinner" style="position:relative;;z-index:10;" align="center">
+  <img src="/images/waiting.gif" style="position:relative;top:8px;"> &nbsp; Loading...
+</div>
+<div class="shadowedBox" id="shadowedBox" style="display: none;">
+    
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td class="drop a"></td>
+          <td class="drop b"></td>
+          <td style="width: 623px;" class="drop c"></td>
+          <td class="drop d"></td>
+          <td class="drop e"></td>
+        </tr>
+    </table>
+
+    <table border="0" cellpadding="0" cellspacing="0">
+
+        <tr valign="top">
+          <td class="drop p">
+            <div>&nbsp;</div>
+          </td>
+          <td style="width: 663px;" class="shadowedBoxBody" rowspan="3">
+              <div class="shadowedBoxBodyTitleBar">
+                  <table cellspacing="0" cellpadding="0" border="0" id="headerDiv" width="100%" height="30">
+                      <tr>
+                          <td width="50" align="left" class="leftDiv"><img src="/images/dots.png"></td>
+                          <td align="left" width="100" valign="middle"><div id="shadowedBoxBodyTitleSpinner" style="margin-top: 5px;"></div></td>
+                          <td align="center" width="353"><div id="titlePopupHeader">&nbsp;</div></td>
+                          <td width="160" align="right" class="closeButton"><a class="iconLink" href="javascript:closeInlinePopup('shadowedBox')"><img alt="Close Window" class="iconLink" src="/images/iconshock/closeRed_16.gif" border="0"></a></td>
+                      </tr>
+                  </table>
+              </div>
+              <div id="shadowedBoxBody">
+              </div>
+          </td>
+          <td class="drop f"></td>
+        </tr>
+        
+        <tr valign="top">
+          <td class="drop o">
+            <div>&nbsp;</div>
+          </td>
+          <td class="drop g">
+            <div>&nbsp;</div>
+          </td>
+        </tr>
+        
+        <tr valign="top">
+          <td class="drop n">
+            <div>&nbsp;</div>
+          </td>
+          <td class="drop h">
+            <div>&nbsp;</div>
+          </td>
+        </tr>
+    
+    </table>
+
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+            <td class="drop m"></td>
+            <td class="drop l"></td>
+            <td style="width: 623px;" class="drop k "></td>
+            <td class="drop j"></td>
+            <td class="drop i"></td>
+        </tr>
+    </table>
+
+</div>
+
+
+    </body>
+</html>

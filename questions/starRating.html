@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="QuestionSection_30481758">
+        <a name="30481758" style="text-decoration:none;"> &nbsp; </a><input type="hidden" name="ts_7"><table width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr><td><table cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="QuestionDescription">Please rate the following:
+<!-- Catch Unterminated HTML Comment --></td></tr></tbody></table></td></tr>
+<tr><td><span style="display:none;" class="starSelected"></span><script>function toggleStars(elementID, answerArray, starField) {
+                            var end = answerArray.length;
+                            for(var i=0;i<answerArray.length;i++) {
+                                answerID = answerArray[i];
+                                var elID = "Star_" + answerID;
+                                var starEl = $("#" + elID);
+                                if (i < end) {
+                                    if (starEl.hasClass("starNotSelected")) {
+                                        starEl.removeClass("starNotSelected");
+                                    }
+                                    starEl.addClass("starSelected");
+                                } else {
+                                    if(starEl.hasClass("starSelected")) {
+                                        starEl.removeClass("starSelected");
+                                    }
+                                    starEl.addClass("starNotSelected");
+                                }
+                                if (elID == elementID) {
+                                    var starFieldName = starField.attr("inputName");
+                                    if (document.forms['run'] && document.forms['run'].elements[starFieldName]) {
+                                        document.forms['run'].elements[starFieldName][i].checked=true;
+                                    }
+                                    end = i;
+                                }
+                            }
+                        }
+function hoverOutStars(elementID, answerArr,starField) {
+    for (var i=0;i<answerArr.length;i++) {
+        var answerID = answerArr[i];
+        var elID = "Star_" + answerID;
+        var starEl = $("#" + elID);
+        if (starEl.hasClass("starHovered")) {
+            starEl.removeClass("starHovered");
+        } else if (starEl.hasClass("starNotHovered")) {
+            starEl.removeClass("starNotHovered");
+        }
+    } 
+}
+function hoverInStars(elementID,answerArray,starField) {
+    var starred = true;
+    for(var i = 0;i<answerArray.length;i++) {
+        var answerID = answerArray[i];
+        var elID = "Star_" + answerID;
+        var starEl = $("#" + elID);
+        if (starred == true) {
+            if (starEl.hasClass("starNotHovered")) {
+                starEl.removeClass("starNotHovered");
+            }
+            starEl.addClass("starHovered");
+        } else {
+            if (starEl.hasClass("starHovered")) {
+                starEl.removeClass("starHovered");
+            }
+            starEl.addClass("starNotHovered");
+        }
+        if (elementID == elID) {
+            starred = false;
+        }
+    }
+    starField.attr("hovered","true");
+}
+</script><table cellspacing="0" cellpadding="0" width="99%"><tbody><tr class="SurveyTableHeader"><td style="width:30%" id="qWidthCtrl_30481758"></td><td></td></tr><tr class="AltAnswerText" id="qrow_30481758" style="cursor:auto;"><td style="padding:5px 0 5px 5px;">Books</td> <td style="height:0px;"> <div id="StarRating_30481758" inputname="u_30481758"><table><tbody><tr><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915118" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481758').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481758');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915119" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481758').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481758');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915120" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481758').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481758');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915121" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481758').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481758');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915122" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481758').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481758');"></a></td></tr></tbody></table></div> 
+<script>
+   var answerArray_30481758 = ['143915118','143915119','143915120','143915121','143915122'];
+   $(document).ready(function() {
+       for (var j=0;j<answerArray_30481758.length;j++) {
+           var ansID = answerArray_30481758[j];
+           var elID = "#Star_" + ansID;
+           var starEl = $(elID);
+           var starField_30481758 = $("#StarRating_30481758");
+           $(starField_30481758).attr("inputName", "u_30481758");
+           $(starEl).click(function() {
+               toggleStars(this.id, answerArray_30481758,starField_30481758);
+               if ($(this).hasClass("starHovered")) {
+                  hoverOutStars(this.id,answerArray_30481758);
+               }
+           });
+           $(starEl).hover(function() {
+                    hoverInStars(this.id,answerArray_30481758,starField_30481758);
+                    },
+                    function() {
+                    starField_30481758.attr("hovered","false");
+                         setTimeout(function() {
+                         if (starField_30481758.attr("hovered") == "false") {
+                             hoverOutStars(this.id,answerArray_30481758,starField_30481758);
+                         }
+                         }, 200);
+           });
+       }
+  });
+</script>
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481758" size="3" value="143915118" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481758" size="3" value="143915119" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481758" size="3" value="143915120" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481758" size="3" value="143915121" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481758" size="3" value="143915122" onclick="">
+</span> 
+</td>
+
+</tr><tr><td colspan="5" class="QuestionError AltAnswerText"></td><td class="QuestionError AltAnswerText"></td></tr>
+<tr class="AnswerText AltAnswerColor" id="qrow_30481759" style="cursor:auto;"><td style="padding:5px 0 5px 5px;">Movies</td> <td style="height:0px;"> <div id="StarRating_30481759" inputname="u_30481759" hovered="false"><table><tbody><tr><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915123" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481759').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481759');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915124" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481759').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481759');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915125" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481759').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481759');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915126" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481759').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481759');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915127" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481759').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481759');"></a></td></tr></tbody></table></div> 
+<script>
+   var answerArray_30481759 = ['143915123','143915124','143915125','143915126','143915127'];
+   $(document).ready(function() {
+       for (var j=0;j<answerArray_30481759.length;j++) {
+           var ansID = answerArray_30481759[j];
+           var elID = "#Star_" + ansID;
+           var starEl = $(elID);
+           var starField_30481759 = $("#StarRating_30481759");
+           $(starField_30481759).attr("inputName", "u_30481759");
+           $(starEl).click(function() {
+               toggleStars(this.id, answerArray_30481759,starField_30481759);
+               if ($(this).hasClass("starHovered")) {
+                  hoverOutStars(this.id,answerArray_30481759);
+               }
+           });
+           $(starEl).hover(function() {
+                    hoverInStars(this.id,answerArray_30481759,starField_30481759);
+                    },
+                    function() {
+                    starField_30481759.attr("hovered","false");
+                         setTimeout(function() {
+                         if (starField_30481759.attr("hovered") == "false") {
+                             hoverOutStars(this.id,answerArray_30481759,starField_30481759);
+                         }
+                         }, 200);
+           });
+       }
+  });
+</script>
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481759" size="3" value="143915123" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481759" size="3" value="143915124" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481759" size="3" value="143915125" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481759" size="3" value="143915126" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481759" size="3" value="143915127" onclick="">
+</span> 
+</td>
+
+</tr><tr><td colspan="5" class="QuestionError AnswerText AltAnswerColor"></td><td class="QuestionError AnswerText AltAnswerColor"></td></tr>
+<tr class="AltAnswerText" id="qrow_30481760" style="cursor:auto;"><td style="padding:5px 0 5px 5px;">Music</td> <td style="height:0px;"> <div id="StarRating_30481760" inputname="u_30481760"><table><tbody><tr><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915128" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481760').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481760');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915129" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481760').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481760');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915130" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481760').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481760');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915131" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481760').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481760');"></a></td><td style="vertical-align:middle;padding:3px 5px;"><a id="Star_143915132" class="starNotSelected" onclick="$('.hideAllDivs').hide();$('#tweet30481760').attr('onclick','javascript:gotoLoc(\'http://twitter.com/home?status= \');');hideDiv('pushToSocialGoodRatingDiv30481760');"></a></td></tr></tbody></table></div> 
+<script>
+   var answerArray_30481760 = ['143915128','143915129','143915130','143915131','143915132'];
+   $(document).ready(function() {
+       for (var j=0;j<answerArray_30481760.length;j++) {
+           var ansID = answerArray_30481760[j];
+           var elID = "#Star_" + ansID;
+           var starEl = $(elID);
+           var starField_30481760 = $("#StarRating_30481760");
+           $(starField_30481760).attr("inputName", "u_30481760");
+           $(starEl).click(function() {
+               toggleStars(this.id, answerArray_30481760,starField_30481760);
+               if ($(this).hasClass("starHovered")) {
+                  hoverOutStars(this.id,answerArray_30481760);
+               }
+           });
+           $(starEl).hover(function() {
+                    hoverInStars(this.id,answerArray_30481760,starField_30481760);
+                    },
+                    function() {
+                    starField_30481760.attr("hovered","false");
+                         setTimeout(function() {
+                         if (starField_30481760.attr("hovered") == "false") {
+                             hoverOutStars(this.id,answerArray_30481760,starField_30481760);
+                         }
+                         }, 200);
+           });
+       }
+  });
+</script>
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481760" size="3" value="143915128" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481760" size="3" value="143915129" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481760" size="3" value="143915130" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481760" size="3" value="143915131" onclick="">
+</span> 
+
+<span style="display:none;">
+<input class="Pointer" type="RADIO" name="u_30481760" size="3" value="143915132" onclick="">
+</span> 
+</td>
+
+</tr><tr><td colspan="5" class="QuestionError AltAnswerText"></td><td class="QuestionError AltAnswerText"></td></tr>
+</tbody></table><div id="pushToSocialGoodRatingDiv30481760" style="display:none; margin-top:20px;"><div style="color:blue;text-align:center;"></div><br><div style="text-align:center;"></div></div></td></tr></tbody></table>
+      </div>
+    </body>
+</html>
