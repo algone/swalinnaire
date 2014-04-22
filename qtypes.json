@@ -14,7 +14,8 @@
     },
     {
         "value": "U2",
-        "type": "SingleAnswer-Vertical"
+        "type": "SingleAnswer-Vertical",
+        "url":"questions/multipleChoice.html"
     },
     {
         "value": "U3",
@@ -39,15 +40,18 @@
     },
     {
         "value": "T1",
-        "type": "SingleLineInput"
+        "type": "SingleLineInput",
+        "url":"questions/singleLineInput.html"
     },
     {
         "value": "T2",
-        "type": "MultipleLineText"
+        "type": "MultipleLineText",
+        "url":"questions/openEnded.html"
     },
     {
         "value": "T3",
-        "type": "CommentBox"
+        "type": "CommentBox",
+        "url":"questions/openEnded.html"
     },
     {
         "value": "T4",
@@ -55,27 +59,44 @@
     },
     {
         "value": "E",
-        "type": "Date/Time"
+        "type": "Date/Time",
+        "url":"questions/datetime.html"
     },
     {
         "value": "R",
-        "type": "RankOrder"
+        "type": "RankOrder",
+        "url":"questions/orderRaing.html"
+    },
+        {
+        "value": "R1",
+        "type": "StarRating",
+        "url":"questions/starRating.html"
+    },
+            {
+        "value": "R3",
+        "type": "SliderRating",
+        "url":"questions/sliderRating.html"
     },
     {
         "value": "C",
-        "type": "ConstantSum"
+        "type": "ConstantSum",
+        "url":"questions/orderRating3.html"
     },
     {
         "value": "B",
-        "type": "MatrixTable"
+        "type": "MatrixTable",
+        "url":"questions/matrixTable.html"
     },
     {
         "value": "B1",
         "type": "RadioButtons"
+        ,
+        "url":"questions/selectManyChoice.html"
     },
     {
         "value": "B2",
-        "type": "CheckBoxes"
+        "type": "CheckBoxes",
+        "url":"questions/selectOneChoice.html"
     },
     {
         "value": "B3",
@@ -123,7 +144,8 @@
     },
     {
         "value": "A5",
-        "type": "7Items(Agree/Disagree)"
+        "type": "7Items(Agree/Disagree)",
+        "url":"questions/netscore.html"
     },
     {
         "value": "A6",

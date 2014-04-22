@@ -39,7 +39,24 @@ angular.module('QuestionnaireApp.controllers', []).
                 $scope.showEditor = function() {
                     $scope.showEdit = true;
                 };
+                $scope.done = function() {
+                    var currQuestion = $scope.question;
+                    var questHelp = $scope.helpText;
+                    var questtype = $scope.questionType;
+                    var quest = [];
+                    quest.push(currQuestion);
+                    quest.push(questHelp);
+                    quest.push(questtype);
+   
+                    console.log('JSON:' + angular.toJson(quest));
 
+                    $scope.questionsSet.push(angular.toJson(quest));
+                    $scope.questCount = $scope.questionsSet.length;
+                    $scope.question = "";
+                    $scope.helpText = '';
+                    $scope.questionType = '';
+                    console.log('JSON:' + angular.toJson($scope.questionsSet));
+                };
                 $scope.addComment = function() {
                     var newText=$scope.helpText;
                     $scope.questHelp = newText;

@@ -79,10 +79,18 @@
                        border-style: none; 
                        appearance:none;
                        width: 100%;
+                       text-align: justify;
             }
-            #example-one { margin-bottom: 10px; }
-            [contenteditable="true"] { padding: 10px; outline: 2px dashed #CCC; }
-            [contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
+            #example-one { 
+                margin-bottom: 10px; 
+            }
+            [contenteditable="true"] { 
+                padding: 5px; 
+                outline: 2px dashed #CCC; 
+            }
+            [contenteditable="true"]:hover { 
+                outline: 2px dashed #0090D2; 
+            }
         </style>
 
     </head>
@@ -99,7 +107,7 @@
 
             <div id="content">
 
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" style="text-align: center;">
 
                     <div class="ss-formwidget-container-editor" >
                         <div  class="ss-formwidget-topright-actions ss-widget-nodrag" style="pull-right">
@@ -121,7 +129,14 @@
                         </div>  
                         <div class="ss-formwidget-div" >
                             <div class="ss-formwidget-draghandle"></div>
+                            <div class="form-group">
+                                <label for="types" >Select question type:</label>
+                                <select class="form-control" ng-model="questionType" id="types" ng-options="type.type for type in questionsTypes">
+                                    <option value="{{type.value}}">(blank)</option>
+                                </select>
 
+                            </div>
+                            
                             <div class="form-group">
 
                                 <div>
@@ -139,12 +154,7 @@
                                     </textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control" ng-model="questionType" ng-options="type.type for type in questionsTypes">
-                                    <option value="{{type.value}}">(blank)</option>
-                                </select>
 
-                            </div>
                             <div ng-include="questionType.url" ></div>
 
                             <div class="form-group">
@@ -156,7 +166,7 @@
                                 <button class="btn btn-primary" ng-click="showEditor()">
                                     Configure
                                 </button> 
-                                <button type="submit" class="btn btn-info" ng-click="closer()">Done</button>
+                                <button type="submit" class="btn btn-info" ng-click="done()">Done</button>
 
                             </div>  
 
