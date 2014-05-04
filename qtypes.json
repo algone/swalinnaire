@@ -20,14 +20,20 @@
     {
         "value": "U3",
         "type": "SingleAnswer-Menu"
+        ,
+        "url":"questions/dropdownSingle.html"
     },
     {
         "value": "U4",
         "type": "MultipleAnswer-Horizontal"
+         ,
+        "url":"questions/dropdownMultiple.html"
     },
     {
         "value": "U5",
         "type": "MultipleAnswer-Vertical"
+         ,
+        "url":"questions/selectManyChoice.html"
     },
     {
         "value": "U6",
@@ -56,6 +62,8 @@
     {
         "value": "T4",
         "type": "Combination"
+         ,
+        "url":"questions/matrixTable1.html"
     },
     {
         "value": "E",
@@ -65,7 +73,7 @@
     {
         "value": "R",
         "type": "RankOrder",
-        "url":"questions/orderRaing.html"
+        "url":"questions/orderRating.html"
     },
         {
         "value": "R1",
@@ -85,7 +93,7 @@
     {
         "value": "B",
         "type": "MatrixTable",
-        "url":"questions/matrixTable.html"
+        "url":"questions/matrixTable2.html"
     },
     {
         "value": "B1",

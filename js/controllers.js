@@ -75,5 +75,16 @@ angular.module('QuestionnaireApp.controllers', []).
                         success(function(data) {
                             $scope.questionsTypes = data;
                         });
-            }]);
+            }])
+        .
+        controller('choiceCtrl', ['$scope', '$http', function($scope, $http) {
+               $scope.options = []; 
+               $scope.option = ""; 
+               
+               $scope.addOption = function() {
+                   $scope.options.push($scope.option);
+console.log('JSON:' + angular.toJson($scope.options));
+                };
+                
+        }]);
 
