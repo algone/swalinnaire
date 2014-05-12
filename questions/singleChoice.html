@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <!-- To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. -->
-<div ng-controller="choiceCtrl">
-<div class="form-group" >
+<div ng-controller="ChoiceCtrl">
+    <div class="form-group" >
 
-    <div class="checkbox" ng-repeat="item in options track by $index">
-        <label>
-            <input type="checkbox"/> 
-            <div contenteditable="true">
-                <input  ng-model="option" name="{{item}}"  id="helptext" placeholder="add an option"/>
-            </div>
-        </label>
-
+        <div class="checkbox" >
+            <label ng-repeat="item in items track by $index">
+                <input type="checkbox" /> 
+                <div contenteditable="true"> 
+                    <input type="text" ng-model="item.Name"  id="helptext" >
+                </div>
+            </label>
+        </div>
+        <!--li ng-repeat="item in items">
+            <label>{{item.name}}</label>
+            <input type="checkbox" ng-model="newObject[item.name]">
+        </li--> 
+        <div class="form-group">
+            <button type="submit" ng-click="addItem(item)" class="btn btn-sm btn-info pull-right">Add Option</button>
+        </div>        
     </div>
-</div>
-<div class="form-group">
-    <button type="submit" ng-click="addOption()" class="btn btn-sm btn-info">Add Option</button>
-</div>
+
 </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. -->
+<div ng-controller="ShoppingCartCtrl">
+    
+    <div class="container-fluid">
+        <!--div class="row" ng-repeat="item in items">
+            <div class="col-xs-6 col-md-3">{{item.Name}}</div>
+            <div class="col-xs-6 col-md-3">{{item.Price}}</div>
+            <div class="col-xs-6 col-md-3">{{item.Quantity}}</div>
+            <div class="col-xs-6 col-md-3"><input type="button" value="Remove" ng-click="removeItem($index)" /></div>
+        </div-->
+    </div>
+    <div class="container-fluid">
+        <div class="row" ng-repeat="item in items" contenteditable="true">
+            <div class="col-xs-12">
+                <div class="checkbox" >
+                    <label>
+                        <input type="checkbox"  ng-model="item.Name" disabled/>
+                        {{item.Name}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <form class="form-inline" role="form">
+            <div class="form-group" >
+                <label class="sr-only" for="newOpt">Add</label>
+             
+                <input type="text" ng-model="item.Name" class="form-control input-sm" id="newOpt" placeholder="Add an option">
+                 
+            </div>
+            <input type="Button" class="btn btn-sm btn-info" value="Add" ng-click="addItem(item)" />
+        </form>
+    </div>
+        <hr/>
+</div>

@@ -26,7 +26,7 @@ angular.module('QuestionnaireApp.controllers', []).
                     quest.push(currQuestion);
                     quest.push(questHelp);
                     quest.push(questtype);
-   
+
                     console.log('JSON:' + angular.toJson(quest));
 
                     $scope.questionsSet.push(currQuestion);
@@ -47,7 +47,7 @@ angular.module('QuestionnaireApp.controllers', []).
                     quest.push(currQuestion);
                     quest.push(questHelp);
                     quest.push(questtype);
-   
+
                     console.log('JSON:' + angular.toJson(quest));
 
                     $scope.questionsSet.push(angular.toJson(quest));
@@ -58,7 +58,7 @@ angular.module('QuestionnaireApp.controllers', []).
                     console.log('JSON:' + angular.toJson($scope.questionsSet));
                 };
                 $scope.addComment = function() {
-                    var newText=$scope.helpText;
+                    var newText = $scope.helpText;
                     $scope.questHelp = newText;
                 };
                 $scope.closer = function() {
@@ -75,16 +75,64 @@ angular.module('QuestionnaireApp.controllers', []).
                         success(function(data) {
                             $scope.questionsTypes = data;
                         });
+
             }])
         .
-        controller('choiceCtrl', ['$scope', '$http', function($scope, $http) {
-               $scope.options = []; 
-               $scope.option = ""; 
-               
-               $scope.addOption = function() {
-                   $scope.options.push($scope.option);
-console.log('JSON:' + angular.toJson($scope.options));
+        controller('ChoiceCtrl', ['$scope', function($scope) {
+                $scope.newObject = {};
+                $scope.options = [{name: 'foo'}, {name: 'bar'}, {name: 'baz'}];
+
+
+                $scope.items = [
+                    {Name: "Soap", Price: "25", Quantity: "10"},
+                    {Name: "Shaving cream", Price: "50", Quantity: "15"},
+                    {Name: "Shampoo", Price: "100", Quantity: "5"},
+                    {Name: "new option", Price: "100", Quantity: "5"}
+                ];
+
+                $scope.addItem = function(item) {
+                    console.log('newItem: ' + item);
+                    $scope.items.push(item);
+                    console.log('JSON:' + angular.toJson($scope.items));
+                    $scope.item = {};
+                }
+
+                $scope.addOption = function(newItem) {
+                    console.log(newItem);
+                    $scope.options.push(newItem);
+                    console.log('JSON:' + angular.toJson($scope.options));
+//                    $scope.choiceOptions.option='';
                 };
-                
-        }]);
+
+
+            }
+
+
+        ]).controller('ShoppingCartCtrl', ['$scope', function($scope) {
+
+        $scope.items = [
+            {Name: "Soap", Price: "25", Quantity: "10"},
+            {Name: "Shaving cream", Price: "50", Quantity: "15"},
+            {Name: "Shampoo", Price: "100", Quantity: "5"}
+        ];
+
+        $scope.addItem = function(item) {
+//             console.alert('newItem: ' + item);
+            $scope.items.push(item);
+            console.log('JSON:' + angular.toJson($scope.items));
+            $scope.item = {};
+        }
+
+        $scope.totalPrice = function() {
+            var total = 0;
+            for (count = 0; count < $scope.items.length; count++) {
+                total += $scope.items[count].Price * $scope.items[count].Quantity;
+            }
+            return total;
+        }
+
+        $scope.removeItem = function(index) {
+            $scope.items.splice(index, 1);
+        }
+    }]);
 

@@ -94,7 +94,7 @@
             }
             [contenteditable="true"] { 
                 padding: 5px; 
-                outline: 2px dashed #CCC; 
+                //outline: 2px dashed #CCC; 
             }
             [contenteditable="true"]:hover { 
                 outline: 2px dashed #0090D2; 
@@ -137,7 +137,7 @@
                             <div class="ss-formwidget-draghandle"></div>
                             <div class="form-group">
                                 <label for="types" >Select question type:</label>
-                                <select class="form-control" ng-model="questionType" id="types" ng-options="type.type for type in questionsTypes" >
+                                <select class="form-control input-sm" ng-model="questionType" id="types" ng-options="type.type for type in questionsTypes" >
                                     <option value="{{type.value}}">(blank)</option>
                                 </select>
 
@@ -150,50 +150,50 @@
                             </div>
                             <div class="form-group">
                                 <div id="example-one" contenteditable="true">
-                                    <textarea  ng-model="helpText" name=""  ng-maxlength="" ng-change="" id="helptext" placeholder="Add questions">
+                                    <textarea  ng-model="helpText" name=""  ng-maxlength="" ng-change="" id="helptext" placeholder="Add question description" >
                                     </textarea>
                                 </div>
                             </div>
 
-                            <div ng-include="questionType.url" ></div>
+                            <div ng-include="questionType.url"  >
+
+                            </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-info" ng-click="done()">Done</button>
-
-                                <button class="btn btn-primary" ng-click="showEditor()">
+                                <button type="submit" class="btn btn-info pull-right" ng-click="done()">Done</button>
+                                <button class="btn btn-primary pull-right" ng-click="showEditor()">
                                     Preview
                                 </button> 
-
-
                             </div>  
 
-
+                            <ul class="pager">
+                                <li class="previous"><a href="#">&larr; Older</a></li>
+                                <li class="next"><a href="#">Newer &rarr;</a></li>
+                            </ul>
                         </div>
-
-
-
                     </div>
                 </form>     
                 <div id="footer">
 
                 </div>
             </div>
-            <!-- Bootstrap core JavaScript
-          ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/inc/jquery.hoverIntent.min.js"></script>
-            <script src="js/angular.js/angular.js"></script>
-            <script src="http://code.angularjs.org/1.2.10/angular-route.js"></script>
-            <script src="js/angular-ui/angular-ui.js"></script>
-            <script src="js/angular-strap/angular-strap.js"></script>
-            <script src="js/angular-ui-router/angular-ui-router.js"></script>
-            <script src="js/app.js"></script> 
-            <script src="js/services.js"></script>
-            <script src="js/controllers.js"></script>
-            <script src="js/filters.js"></script>
-            <script src="js/directives.js"></script>
-            <script src="js/javascript.js" type="text/javascript"></script>
+        </div>
+        <!-- Bootstrap core JavaScript
+      ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/inc/jquery.hoverIntent.min.js"></script>
+        <script src="js/angular.js/angular.js"></script>
+        <script src="http://code.angularjs.org/1.2.10/angular-route.js"></script>
+        <script src="js/angular-ui/angular-ui.js"></script>
+        <script src="js/angular-strap/angular-strap.js"></script>
+        <script src="js/angular-ui-router/angular-ui-router.js"></script>
+        <script src="js/app.js"></script> 
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/javascript.js" type="text/javascript"></script>
     </body>
 </html>
