@@ -1,0 +1,181 @@
+[
+    {
+        "value": "U",
+        "type": "--"
+    },
+    {
+        "value": "U",
+        "type": "Choice",
+        "url":"questions/singleChoice.html"
+    },
+    {
+        "value": "U1",
+        "type": "SingleAnswer-Horizontal",
+         "url":"questions/singleChoice_1.html"
+    },
+    {
+        "value": "U2",
+        "type": "SingleAnswer-Vertical",
+        "url":"questions/multipleChoice.html"
+    },
+    {
+        "value": "U3",
+        "type": "SingleAnswer-Menu"
+        ,
+        "url":"questions/dropdownSingle.html"
+    },
+    {
+        "value": "U4",
+        "type": "MultipleAnswer-Horizontal"
+         ,
+        "url":"questions/dropdownMultiple.html"
+    },
+    {
+        "value": "U5",
+        "type": "MultipleAnswer-Vertical"
+         ,
+        "url":"questions/selectManyChoice.html"
+    },
+    {
+        "value": "U6",
+        "type": "MultipleAnswer-Menu"
+    },
+    {
+        "value": "T",
+        "type": "OpenEndedText",
+        "url":"questions/openEnded.html"
+    },
+    {
+        "value": "T1",
+        "type": "SingleLineInput",
+        "url":"questions/singleLineInput.html"
+    },
+    {
+        "value": "T2",
+        "type": "MultipleLineText",
+        "url":"questions/openEnded.html"
+    },
+    {
+        "value": "T3",
+        "type": "CommentBox",
+        "url":"questions/openEnded.html"
+    },
+    {
+        "value": "T4",
+        "type": "Combination"
+         ,
+        "url":"questions/matrixTable1.html"
+    },
+    {
+        "value": "E",
+        "type": "Date/Time",
+        "url":"questions/datetime.html"
+    },
+    {
+        "value": "R",
+        "type": "RankOrder",
+        "url":"questions/orderRating.html"
+    },
+        {
+        "value": "R1",
+        "type": "StarRating",
+        "url":"questions/starRating.html"
+    },
+            {
+        "value": "R3",
+        "type": "SliderRating",
+        "url":"questions/sliderRating.html"
+    },
+    {
+        "value": "C",
+        "type": "ConstantSum",
+        "url":"questions/orderRating3.html"
+    },
+    {
+        "value": "B",
+        "type": "MatrixTable",
+        "url":"questions/matrixTable2.html"
+    },
+    {
+        "value": "B1",
+        "type": "RadioButtons"
+        ,
+        "url":"questions/selectManyChoice.html"
+    },
+    {
+        "value": "B2",
+        "type": "CheckBoxes",
+        "url":"questions/selectOneChoice.html"
+    },
+    {
+        "value": "B3",
+        "type": "SpreadSheet"
+    },
+    {
+        "value": "Q",
+        "type": "PresentationText(DisplayOnly)"
+    },
+    {
+        "value": "Q4",
+        "type": "Section/PageHeader"
+    },
+    {
+        "value": "Q1",
+        "type": "DescriptiveText"
+    },
+    {
+        "value": "Q2",
+        "type": "Graphics/Multimedia"
+    },
+    {
+        "value": "Q3",
+        "type": "Formatting/Spacer"
+    },
+    {
+        "value": "A",
+        "type": "PreformattedCustomQuestions"
+    },
+    {
+        "value": "A1",
+        "type": "SemanticDifferentialScale"
+    },
+    {
+        "value": "A2",
+        "type": "2Items(Yes/No)"
+    },
+    {
+        "value": "A3",
+        "type": "3Items(Likely/Unlikely)"
+    },
+    {
+        "value": "A4",
+        "type": "5Items(Good/Bad)"
+    },
+    {
+        "value": "A5",
+        "type": "7Items(Agree/Disagree)",
+        "url":"questions/netscore.html"
+    },
+    {
+        "value": "A6",
+        "type": "10Items(Like/Dislike)"
+    },
+    {
+        "value": "A10",
+        "type": "LikertScale"
+    },
+    {
+        "value": "A11",
+        "type": "5Itemsx1(StronglyAgree/Disagree)"
+    },
+    {
+        "value": "A12",
+        "type": "5Itemsx3(Satisfied/Dissatisfied)"
+    },
+    {
+        "value": "A13",
+        "type": "10Itemsx5(Agree/Disagree)"
+    }
+]
+
+

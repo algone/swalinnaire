@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="QuestionnaireApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+        <title>Swalinnaire</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+
+        <link href="css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/sidepanel.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="css/editor.css" type="text/css" media="screen"/>
+        <!-- Just for debugging purposes. Don't actually copy this line! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <style type="text/css">
+            body{
+                font-family:Arial, Helvetica, sans-serif;
+
+            }
+            .wrapper{
+                position:relative;
+                font-family:Arial, Helvetica, sans-serif;
+                padding-top:90px;
+                padding-left:50px;
+                width:80%;
+                margin:auto
+            }
+            .wrapper .text{
+                font-family:Arial, Helvetica, sans-serif;
+                padding-top:50px;
+            }
+            .wrapper h1{
+                font-family:Arial, Helvetica, sans-serif;
+                font-size:26px;
+            }
+            .longText{
+                margin-top:20px;
+                width:600px;
+                font:18px/24px Arial, Helvetica, sans-serif;
+                color:gray;
+            }
+            span.btn{
+                padding:10px;
+                display:inline-block;
+                cursor:pointer;
+                font:12px/14px Arial, Helvetica, sans-serif;
+                color:#aaa;
+                background-color:#eee;
+                -moz-border-radius:10px;
+                -webkit-border-radius:10px;
+                -moz-box-shadow:#999 2px 0px 3px;
+                -webkit-box-shadow:#999 2px 0px 3px;
+            }
+            span.btn:hover{
+                background-color:#000;
+            }
+
+            /*
+            custom style for extruder
+            */
+
+            .extruder.left.a .flap{
+                font-size:18px;
+                color:white;
+                top:0;
+                padding:10px 0 10px 10px;
+                background:#772B14;
+                width:30px;
+                position:absolute;
+                right:0;
+                -moz-border-radius:0 10px 10px 0;
+                -webkit-border-top-right-radius:10px;
+                -webkit-border-bottom-right-radius:10px;
+                -moz-box-shadow:#666 2px 0px 3px;
+                -webkit-box-shadow:#666 2px 0px 3px;
+            }
+
+            .extruder.left.a .content{
+                border-right:3px solid #772B14;
+            }
+
+            .extruder.top .optionsPanel .panelVoice a:hover{
+                color:#fff;
+                background: url("elements/black_op_30.png");
+                border-bottom:1px solid #000;
+            }
+            .extruder.top .optionsPanel .panelVoice a{
+                border-bottom:1px solid #000;
+            }
+
+            .extruder.left.a .flap .flapLabel{
+                background:#772B14;
+            }
+        </style>
+
+    </head>
+
+    <body  ng-controller="questionsCtrl">
+
+        <div class="site-wrapper">
+
+            <div class="site-wrapper-inner">
+
+                <div class="cover-container">
+
+                    <div class="masthead clearfix">
+                        <div class="inner">
+                            <h3 class="masthead-brand">Swalinnaire</h3>
+                            <ul class="nav masthead-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="inner cover">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+
+                                <div >
+                                    <input type="text" class="form-control" id="inputEmail3" ng-model="question" placeholder="Type in a question">
+                                </div>
+                            </div>      
+
+                            <div class="input-append">
+
+                                <button class="btn btn-primary" ng-click="addQuestion()">
+                                    Add a question
+                                </button>  
+
+                            </div>
+
+
+                            <br/>
+
+                        </form>
+
+                    </div>
+
+                    <div class="mastfoot">
+                        <div class="inner">
+                            <p>Powered by gstLab</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="extruderBottom" class="{title:'Configure Questions'}">
+            <div class="text" >
+                <div class="ss-formwidget-container ss-formwidget-container-editor" style="">
+
+                    <div id=":ee.fw_tra" class="ss-formwidget-topright-actions ss-widget-nodrag">
+                        <div role="button" id=":ee.fw_eal" class="goog-inline-block jfk-button jfk-button-standard jfk-button-narrow jfk-button-checked" tabindex="0" data-tooltip="Edit" aria-label="Edit" aria-pressed="true" style="-webkit-user-select: none;">
+                            <div class="docs-icon goog-inline-block ">
+                                <div class="docs-icon-img-container docs-icon-img docs-icon-mode-edit" aria-hidden="true">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div role="button" id=":ee.fw_dq" class="goog-inline-block jfk-button jfk-button-standard jfk-button-narrow" tabindex="0" data-tooltip="Duplicate" aria-label="Duplicate" style="-webkit-user-select: none;">
+                            <div class="docs-icon goog-inline-block ">
+                                <div class="docs-icon-img-container docs-icon-img docs-icon-duplicate" aria-hidden="true">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div role="button" id=":ee.fw_rmb" class="goog-inline-block jfk-button jfk-button-standard jfk-button-narrow" tabindex="0" data-tooltip="Delete" aria-label="Delete" style="-webkit-user-select: none;">
+                            <div class="docs-icon goog-inline-block ">
+                                <div class="docs-icon-img-container docs-icon-img docs-icon-trash" aria-hidden="true">&nbsp;</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ss-formwidget-div">
+                        <div class="ss-formwidget-draghandle"></div>
+                        <div>
+                            <table class="ss-widget-nodrag goog-inline-block">
+                                <tbody>
+                                    <tr>
+                                        <th class="ss-header">
+                                            <label class="ss-formwidget-fieldlabel" for=":ee.fw_tf">Question Title</label>
+                                        </th>
+                                        <td>
+                                            <input class="jfk-textinput ss-formwidget-inputfield" id=":ee.fw_tf"  placeholder="Untitled Question" type="text" dir="ltr"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="ss-header">
+                                            <label class="ss-formwidget-fieldlabel" for=":ee.fw_htf">Help Text</label>
+                                        </th>
+                                        <td>
+                                            <input class="jfk-textinput ss-formwidget-inputfield" id=":ee.fw_htf" type="text" dir="ltr">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="ss-header"><span class="ss-formwidget-fieldlabel"><label for=":ee.fw_tdd">Question Type</label></span>
+                                        </th>
+                                        <td>
+                                            <form>
+                                      <select ng-model="qtype2" ng-options="c.type for c in questionsTypes" class="form-control"></select><br>
+                                           
+</form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+
+                        </div>
+                        <div class="ss-widget-nodrag goog-inline-block">
+                            <div class="goog-inline-block ss-header">
+                                <div role="button" class="goog-inline-block jfk-button jfk-button-action" tabindex="0" style="-webkit-user-select: none;">Done</div>
+                            </div><span><span class="ss-formwidget-buttons ss-form-checkbox"><span class="jfk-checkbox goog-inline-block jfk-checkbox-unchecked ss-formwidget-required-cb" role="checkbox" aria-checked="false" id=":ee.fw_rcb" dir="ltr" tabindex="0" aria-labelledby=":ee.fw_rcbl" style="-webkit-user-select: none;"><div class="jfk-checkbox-checkmark"></div></span>&nbsp;<span id=":ee.fw_rcbl" class="ss-formwidget-fieldlabel">Required question</span></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="ss-formwidget-selection" style="background-color: rgb(77, 144, 254); width: 3px; left: 0px; top: 0.39996337890625px; height: 318px;"></div>
+                </div>
+            </div>
+        </div>   
+        <div class="panel" id="questinlizer">
+            <h1>Configure Question</h1>
+
+            <div style="clear:both;"></div>
+
+            <div style="clear:both;"></div>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/inc/jquery.hoverIntent.min.js"></script>
+        <script src="js/inc/jquery.mb.flipText.js"></script>
+        <script src="js/inc/mbExtruder.js"></script>   
+        <script src="js/angular.js/angular.js"></script>
+        <script src="http://code.angularjs.org/1.2.10/angular-route.js"></script>
+        <script src="js/angular-ui/angular-ui.js"></script>
+        <script src="js/angular-strap/angular-strap.js"></script>
+
+        <script src="js/angular-ui-router/angular-ui-router.js"></script>
+        <script src="js/app.js"></script> 
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+
+
+
+        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $(".trigger").click(function() {
+                                    $(".panel").toggle("fast");
+                                    $(this).toggleClass("active");
+                                    return false;
+                                });
+                            });
+                            $(function() {
+                                $("#extruderBottom").buildMbExtruder({
+                                    position: "bottom",
+                                    width: 1000,
+                                    extruderOpacity: 1,
+                                    onExtOpen: function() {
+                                    },
+                                    onExtContentLoad: function() {
+                                    },
+                                    onExtClose: function() {
+                                    }
+                                });
+
+                                $.fn.changeLabel = function(text) {
+                                    $(this).find(".flapLabel").html(text);
+                                    $(this).find(".flapLabel").mbFlipText();
+                                };
+
+                            });
+        </script>
+
+    </body>
+</html>
+

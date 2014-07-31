@@ -1,0 +1,810 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtd HTML 4.01 Transitional//EN" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>QuestionPro Online Survey Software Application</title>
+        <script src="/javascript/jquery-1.7.1.min.js"></script>
+        <script src="/javascript/jquery-ui.min.js"></script>
+        <script src="/javascript/jscolor/jscolor.js"></script>
+        <link rel="stylesheet" href="/stylesheets/jquery-ui.css"/>
+
+        <script language="JavaScript" src="/javascript/global.js?version=21"></script>
+        <script type="text/javascript" src="/javascript/googleanalytics.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://www.questionpro.com/stylesheets/sitestyle.css"/>
+        <link rel="stylesheet" type="text/css" href="http://www.questionpro.com/stylesheets/common.css"/>
+        <link rel="shortcut icon" href="/images/qphome/favicon.ico"/>
+        <!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/stylesheets/IE-sitestyleII.css">
+        <![endif]-->
+        <SCRIPT>
+            function submitPreview() {
+                document.forms[0].preview.value = "true";
+                document.forms[0].submit();
+            }
+        </SCRIPT>
+    </head>
+    <body>
+        <div id="AlertMessage" align="center">
+        </div>
+        <!-- START JavaScript -->
+
+
+        <span class="text">
+            Choose a Question Type from the drop down list and then click on the <StrONG> Add Question </StrONG> Button.
+        </span>
+
+        <form name="AddQuestionForm" method="POST" action="showAddQuestion.do">
+            <input type="hidden" name="preview" value="false"/>
+
+            <table WIDTH="100%" class="text">
+                <tr>
+                    <td class="text"> 
+                        <table class="text">
+                            <tr>
+                                <td valign="TOP" width="250"> 
+                                    <select name="questionCategory" onchange="submitPreview()" class="textSmall">
+                                        <option value="U" class="textSmallBold"  > -- </option>
+                                        <option value="U" class="textSmallBold"  >Choice</option>
+
+                                        <option value="U1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Single Answer [Horizontal]</option>
+                                        <option value="U2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Single Answer [Vertical]</option>
+                                        <option value="U3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Single Answer [Menu]</option>
+                                        <option value="U4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multiple Answer [Horizontal]</option>
+                                        <option value="U5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multiple Answer [Vertical]</option>
+                                        <option value="U6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multiple Answer [Menu]</option>
+
+                                        <option value="T" class="textSmallBold"  >Open Ended Text </option>
+                                        <option value="T1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Single Line Input</option>
+                                        <option value="T2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multiple Line Text</option>
+                                        <option value="T3" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comment Box</option>
+                                        <option value="T4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Combination</option>
+
+                                        <option value="E" class="textSmallBold"  >Date/Time </option>
+
+                                        <option value="R" class="textSmallBold"  >Rank Order</option>
+
+                                        <option value="C" class="textSmallBold"  >Constant Sum </option>
+
+                                        <option value="B" class="textSmallBold"  >Matrix Table</option>
+
+                                        <option value="B1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radio Buttons</option>
+                                        <option value="B2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CheckBoxes</option>
+                                        <option value="B3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpreadSheet</option>
+
+                                        <option value="Q" class="textSmallBold"  >Presentation Text (Display Only)</option>
+                                        <option value="Q4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section/Page Header</option>
+                                        <option value="Q1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Descriptive Text</option>
+                                        <option value="Q2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphics/Multimedia</option>
+                                        <option value="Q3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formatting/Spacer</option>
+
+
+                                        <option value="A" class="textSmallBold"  >Preformatted Custom Questions</option>
+
+                                        <option value="A1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Semantic Differential Scale</option>
+
+                                        <option value="A2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 Items (Yes/No)</option>
+                                        <option value="A3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 Items (Likely/Unlikely)</option>
+                                        <option value="A4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 Items (Good / Bad)</option>
+                                        <option value="A5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7 Items (Agree / Disagree)</option>
+                                        <option value="A6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 Items (Like  / Dislike)</option>
+
+                                        <option value="A10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Likert Scale</option>
+
+                                        <option value="A11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  5 Items x 1 (Strongly Agree/Disagree)</option>
+                                        <option value="A12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  5 Items x 3 (Satisfied/Dissatisfied)</option>
+                                        <option value="A13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 Items x 5 (Agree/Disagree)</option></select>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+        <form name="AddQuestionForm" method="POST" action="addAdvancedQuestion.do">
+            <input type="hidden" name="type" value=""/>
+            <input type="hidden" name="preview" value="false"/>
+            <input type="hidden" name="questionCategory" value=""/>
+            <input type="hidden" name="sectionLocationID" value="0"/>
+            <table>
+                <tr>       <td>
+                        <div ALIGN="LEFT">
+                            <table onclick="showCollapse('AddAdvancedQuestionMnu')" class="handPointer">
+                                <tr>
+                                    <td valign="center" style="border: 0px;">
+                                        <IMG SRC="/images/plus.gif" BORDER=0 alt="" NAME="AddAdvancedQuestionMnu_sign" id="AddAdvancedQuestionMnu_sign"/>
+                                    </td>
+                                    <td valign="center" style="border: 0px;"><span class="secondaryTextBlue"><b style='text-decoration:underline;'>Advanced Questions</b></span>
+                                    </td>
+                            </table>
+                        </div>
+
+                        <div id="AddAdvancedQuestionMnu" STYLE="display:none;">
+                            <table width="350" cellpadding="0" cellspacing="0" style="padding:0px;border:0px;">
+                                <tr>
+                                    <td>
+                                        <table BORDER="0" CELLSPACING="0" CELLPADDING="0">
+                                            <tr>
+                                                <td class="darkstroke" width="100%" style="padding:3px;">
+
+                                                    <table width=100%>
+                                                        <tr>
+                                                        </tr>
+                                                        <td VALIGN="TOP" width="250">
+                                                            <div>
+                                                                Choose a Question Type and click on the <b>Add Advanced</b> button.
+                                                            </div>
+                                                            <br/>
+
+
+                                                            <select name="advancQuestionCategory" onchange="advancedQuestionPreview(this)" class="textSmall">
+
+                                                                <option value="null" class="textSmallBold"  > --  </option>
+
+                                                                <optgroup label="Matrix / Scale / Reference">
+                                                                    <option value="D">Side-By-Side Matrix</option>
+                                                                    <option value="O">Dynamic Lookup Table</option>
+                                                                    <option value="J">Reference Data</option>
+                                                                </optgroup>
+
+                                                                <optgroup label="Multimedia/File Upload">
+                                                                    <option value="L">Attach/Upload File</option>
+                                                                    <option value="P">TubePulse&trade; [Beta]</option>
+                                                                </optgroup>
+
+                                                                <optgroup label="Logic/Randomizer">
+                                                                    <option value="Z" class="textSmall">Randomizer </option>
+                                                                    <option value="X" class="textSmall">Custom Scoring/Logic Script</option>
+                                                                </optgroup>
+
+                                                                <optgroup label="Conjoint">
+                                                                    <option value="Y" class="textSmall">Conjoint (Self Explicated)</option>
+                                                                    <option value="W_CBC" class="textSmall">Choice Based Conjoint</option>
+                                                                    <option value="W_ACA" class="textSmall">Ratings Based Conjoint </option>
+                                                                </optgroup>
+
+
+                                                            </select>
+
+                                                        </td>
+                                                        <td>
+
+                                                            <A HREF="javascript:checkSelection(document.forms[1].advancQuestionCategory,'null',document.forms[1])">
+                                                                <img src="/images/addAdvanced.gif" border=0> </A>
+                                                        </td>
+
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                    <td style="padding-top:5px;height:100%;" align="right">
+                                        <div style="border-left:3px solid #cccccc;height:100%;">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="padding-left:5px;">
+                                        <div style="border-top:3px solid #cccccc;width:100%;">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </td> </tr>
+
+
+
+</table>
+
+        </form>
+
+
+
+<div class="singleLine"></div>
+
+<div id="questionPreview" >
+
+
+
+    <!-- START displayPreviewAddQuestion.jsp -->
+
+
+    <table WIDTH="80%">
+        <tr><td>
+                <table width="100%" cellpadding="0" cellspacing="0" style="padding:0px;border:0px;"><tr><td><div style="background:#003765; color:#fff; padding:10px;"><div class="heading"><span style="color:#ffffff;">Example Question Preview</span></div></div><table BORDER="0" CELLSPACING="0" CELLPADDING="0"><tr><td class="darkstroke" width="100%" style="padding:3px;">
+
+                                        <!-- Padding table -->
+
+                                        <table align=center class="text" width=95%>
+                                            <tr>
+                                                <td>
+
+                                                    <a name="0" style="text-decoration:none;"> &nbsp; </a><input type="hidden" name="ts_0">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" >
+                                                        <tr>
+                                                            <td style='height:23px;'>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td COLspan="3">
+                                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                                    <tr>
+                                                                        <td id="0"  COLspan="2"  class="QuestionText"  valign="top">
+                                                                            <div class="QuestionText textBoxBottomPadding" style="margin:0px;padding:0px 20px 0px 0px; ;">Comments / Suggestions for improvement?</div></td>
+                                                                    <tr>
+                                                                        <td  COLspan="2"  class="QuestionError"  COLspan="2"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td COLspan="2" class="AnswerText">
+                                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                                    <tr>
+                                                                        <td valign="center" class="AnswerText"></td>
+                                                                        <td class="AnswerText">
+                                                                            <TEXTAREA id="qWidthCtrl_0"  style="width:320px;height:80px;" " NAME="t_0" ></TEXTAREA>
+</td>
+<td valign="center" class="AnswerText"> &nbsp;</td>
+<tr>
+</table>
+                                                                        </td>
+    
+</tr>
+                                                        </table>
+                                                                </td>
+    
+</tr>
+                                                        </table>
+
+<BR><BR>
+
+<div class="secondaryText">
+<B>Note</B>: This is just an example. You can modify the text and the options (scales etc.) 
+when you actually add the question to your survey.
+</div>
+
+<br>
+</td>
+</tr>
+</table>
+
+<!-- End padding table -->
+
+</td><td style="padding-top:5px;height:100%;" align="right"><div style="border-left:3px solid #cccccc;height:100%;"></div></td></tr><tr><td colspan="2" style="padding-left:5px;"><div style="border-top:3px solid #cccccc;width:100%;"></div></td></tr></table>
+            </td>
+        </tr>
+    </table>
+
+    
+
+<!-- END displayPreviewAddQuestion.jsp -->
+
+
+</div>
+<BR>
+
+<div  id="randomizerPreview" style="display:none;">
+
+<table ALIGN="CENTER" WIDTH="95%" class="grid">
+  <tr class="text">
+   <td colspan=2>
+     <B>
+     Randomizer can be implemented to perform the following:
+     </B>
+   </td>
+  </tr>
+  <tr class="text">
+   <td width=180>
+    &nbsp;&nbsp;<B>Single Question Display</B> 
+   </td>
+   <td>
+    The randomizer selects <b>one</b> question from a <B>pre-defined list</B> of questions and displays it.
+   </td>
+  </tr>    
+
+  <tr class="text">
+   <td>  
+    &nbsp;&nbsp;<B>Block Rotation</B> 
+   </td>
+   <td>
+   The randomizer will display <b>all</b> questions from a <b>pre-defined list</b> 
+   of questions. The order of the questions will be randomized.
+   </td>
+      
+  </tr>
+</table>
+
+
+</div>
+
+<div  id="conjointPreview" style="display:none;">
+
+<table class="grid" width="95%" align="center">
+
+  <tr class="text">
+   <td COLspan="2">
+   <B>Conjoint</B>
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td>
+    <B>Self-Explicated Model</B>
+   </td>
+   <td>
+    In this model, the respondents are asked <B>direct</B> questions about the desireablity of 
+    a particular list of products and profiles. 
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div  id="conjointCBCPreview" style="display:none;">
+
+<table class="grid" width="97%" align="center">
+
+  <tr class="text">
+   <td COLspan="2">
+   <B>Conjoint</B>
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td>
+    <B>Discrete Choice </B>
+   </td>
+   <td>
+    Here respondents are asked to choose between multiple products and the relative weights for each 
+    of the attributes are calculated indirectly
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div  id="conjointACAPreview" style="display:none;">
+
+<table class="grid" width="95%" align="center">
+
+  <tr class="text">
+   <td COLspan="2">
+   <B>Conjoint</B>
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td>
+    <B>Ratings Based Conjoint </B>
+   </td>
+   <td>
+    Here respondents are asked to <B>Rate</B> the likelyhood of purchase for two products at a time. 
+
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div  id="scriptPreview" style="display:none;">
+
+<table ALIGN="CENTER" WIDTH="95%" class="grid">
+  <tr class="text">
+   <td >
+     <B>
+     Custom Scripts
+     </B>
+   </td>
+  </tr>
+  <tr class="text">
+   <td >
+     Custom Scripts enable you to setup <B>delayed branching</B>. Delayed branching
+     is basically <B>programmed logic</B> which decides weather to <B>display/skip</B>
+     questions based on answers to <B>previous</B> questions. 
+   </td>
+  </tr>
+
+  <tr class="text">
+   <td >
+    For example, lets assume you have 3 options for Q1
+    <BR>&nbsp;&nbsp;Q1. Please select one option:
+     <UL>
+      <LI>A</LI>
+      <LI>B</LI>
+      <LI>C</LI>
+     </UL>
+    Now say, you wish to display Q21 if  Q1 = A. <Br>
+    <br>
+    <B>
+    #if ( ${Q1} == 1 )
+        <br>
+        $survey.branchTo("Q21")
+        <br>
+    #end
+    </B>
+   </td>
+  </tr>
+</table>
+
+
+</div>
+
+<div  id="attachFilePreview" style="display:none;">
+
+<table ALIGN="CENTER" WIDTH="50%" class="grid">
+
+  <tr class="text">
+   <td >
+     <B>
+     Attach File
+     </B>
+   </td>
+  </tr>
+  <tr class="text">
+   <td class="QuestionText"  STYLE="font-size:9pt; font-family:Arial;">
+   Please attach file with your response <br>
+   <input type="file" name="demo">
+   <br>
+   <input type="button" value="Upload File">
+   </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div id="MDMPreview" style="display:none;">
+
+<table ALIGN="CENTER">
+  <tr>
+        <td></td>
+        <td colspan="5">
+        <table width="100%">
+          <tr>
+            <td colspan="3" align="center" class="textSmallBold">Importance</td>
+          </tr>
+          <tr>
+            <td width="33%">Not Important</td>
+            <td align="center" width="33%"></td>
+            <td align="right">Very Important</td>
+          </tr>                
+        </table>
+        </td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td colspan="5">
+        <table width="100%">
+          <tr>
+            <td colspan="3" align="center" class="textSmallBold">Satisfaction</td>
+          </tr>
+          <tr>
+            <td width="33%">Not Satisfied</td>
+            <td align="center" width="33%"></td>
+            <td align="right">Very Satisfied</td>
+          </tr>                
+        </table>
+        </td>        
+  </td>
+  <tr>
+        <td></td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+  <tr>
+        <td>Measurement Item #1</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+  <tr>
+        <td>Measurement Item #2</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+  <tr>
+        <td>Measurement Item #3</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+  <tr>
+        <td>Measurement Item #4</td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td style="background:url('/images/dot2.gif')" width=9px"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+        <td align="center"><input type="radio"></td>
+  </tr>
+
+</table>
+
+
+</div>
+
+<div id="tubepulsePreview" style="display:none">
+  
+<div align="center">
+  <img src="/images/tubePulse.jpg"/>
+</div>
+
+</div>
+
+
+<div id="lookupTablePreview" style="display:none">
+  <div>
+The <b>Lookup Table</b> question type allows you to create heirarchial menus easily. Currently we've limited it to two dimensions - Parent&raquo;Child relationships. 
+</div>
+
+<select>
+  <option>Select--</option>
+  <option>West Coast</option>
+  <option>Mountain West</option>
+  <option>Other</option>
+</select>
+
+
+
+</div>
+
+
+<div id="referenceDataPreview" style="display:none">
+  
+<div align="center">
+  <img src="/images/referenceData.jpg"/>
+</div>
+
+
+</div>
+
+
+<div id="displayAdvancedQuestionPreview" style="display:none;">
+</div>
+
+<!-- END /jsp/builder/popupAddQuestion.jsp -->
+
+
+
+
+
+
+
+  <div align="center" style="padding-top: 5px;"> 
+    <form>
+      <a href="javascript:window.close()"><img src="/images/btn_close.gif" border="0" alt="Close Window"></A>
+    </form>
+  </div>
+
+
+
+
+
+
+
+<div id="inlinePopupSpinner" style="position:relative;display:none;z-index:10;" align="center">
+  <img src="/images/waiting.gif" style="position:relative;top:8px;"> &nbsp; Loading...
+</div>
+<div class="shadowedBox" id="shadowedBox" style="display: none;">
+    
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td class="drop a"></td>
+          <td class="drop b"></td>
+          <td style="width: 623px;" class="drop c"></td>
+          <td class="drop d"></td>
+          <td class="drop e"></td>
+        </tr>
+    </table>
+
+    <table border="0" cellpadding="0" cellspacing="0">
+
+        <tr valign="top">
+          <td class="drop p">
+            <div>&nbsp;</div>
+          </td>
+          <td style="width: 663px;" class="shadowedBoxBody" rowspan="3">
+              <div class="shadowedBoxBodyTitleBar">
+                  <table cellspacing="0" cellpadding="0" border="0" id="headerDiv" width="100%" height="30">
+                      <tr>
+                          <td width="50" align="left" class="leftDiv"><img src="/images/dots.png"></td>
+                          <td align="left" width="100" valign="middle"><div id="shadowedBoxBodyTitleSpinner" style="margin-top: 5px;"></div></td>
+                          <td align="center" width="353"><div id="titlePopupHeader">&nbsp;</div></td>
+                          <td width="160" align="right" class="closeButton"><a class="iconLink" href="javascript:closeInlinePopup('shadowedBox')"><img alt="Close Window" class="iconLink" src="/images/iconshock/closeRed_16.gif" border="0"></a></td>
+                      </tr>
+                  </table>
+              </div>
+              <div id="shadowedBoxBody">
+              </div>
+          </td>
+          <td class="drop f"></td>
+        </tr>
+        
+        <tr valign="top">
+          <td class="drop o">
+            <div>&nbsp;</div>
+          </td>
+          <td class="drop g">
+            <div>&nbsp;</div>
+          </td>
+        </tr>
+        
+        <tr valign="top">
+          <td class="drop n">
+            <div>&nbsp;</div>
+          </td>
+          <td class="drop h">
+            <div>&nbsp;</div>
+          </td>
+        </tr>
+    
+    </table>
+
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+            <td class="drop m"></td>
+            <td class="drop l"></td>
+            <td style="width: 623px;" class="drop k "></td>
+            <td class="drop j"></td>
+            <td class="drop i"></td>
+        </tr>
+    </table>
+
+</div>
+
+
+
+<table bgcolor="#ffffff"  border="0" cellpadding="0" cellspacing="0" style="display:none;">
+
+  <!-- Content | Right DS -->
+  <tr>
+    <td valign="top"> 
+      <div id="contentEnclosingDivID" style="position: absolute; background-color: #ffffff; display:none;z-index:2;" >
+
+      <!-- ContentTable -->
+      <table id="contentTableID" class="simpleBorder" style="height:300;width:500;" border="0" cellpadding="0" cellspacing="0">
+        <!-- close popup row -->
+        <tr>
+          <td align="right" valign="top">
+            <a href="javascript:closeLiteInlinePopup();">Close</a>
+          </td>
+        </tr>
+        <!-- Content Row -->
+        <tr>
+          <td valign="top">
+            <div id="contentDivID"></div>
+          </td>
+        </tr>
+      </table>
+      <!-- End Content Table -->
+      
+      </div>
+    </td>
+
+    <!-- Right DS -->
+    <td width="10" valign="top" height="100%">
+      <div id="rightShadowDivID" class="transparent" style="position:absolute;display:none;width:10px;z-index:1;">
+      </div>
+    </td>
+  
+  </tr>
+
+  <!-- Bottom DS -->
+  <tr>
+    <td colspan="2">
+      <div id="bottomShadowDivID" class="transparent" style="position:absolute;display:none;height:10;display:none;z-index:1;">
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+<div class="inlineDivBox displayNone" id="inlineDiv">
+    <div id="inlineDivBody">
+    </div>
+    <div class="inlineDivArrow"></div>
+    <div class="inlineDivArrowBorder"></div>
+</div>
+
+        <SCRIPT LANGUAGE="JavaScript">
+
+    function advancedQuestionPreview(mnu) {
+
+        divObj = document.getElementById('displayAdvancedQuestionPreview');
+        var mnuVal = mnu[mnu.selectedIndex].value;
+        var prevDiv = "";
+
+        if (mnuVal == "Z") {
+            prevDiv = "randomizerPreview";
+        } else if (mnuVal == "D") {
+            prevDiv = "MDMPreview";
+        } else if (mnuVal == "Y") {
+            prevDiv = "conjointPreview";
+        } else if (mnuVal == "W_CBC") {
+            prevDiv = "conjointCBCPreview"
+        } else if (mnuVal == "W_ACA") {
+            prevDiv = "conjointACAPreview";
+        } else if (mnuVal == "X") {
+            prevDiv = "scriptPreview";
+        } else if (mnuVal == "L") {
+            document.forms[1].type.value = "L";
+            document.forms[1].questionCategory.value = "L";
+            prevDiv = "attachFilePreview";
+        } else if (mnuVal == "P") {
+            prevDiv = "tubepulsePreview";
+        } else if (mnuVal == "O") {
+            prevDiv = "lookupTablePreview";
+        } else if (mnuVal == "J") {
+            prevDiv = "referenceDataPreview";
+        }
+
+        if (mnuVal != "null") {
+            document.getElementById('displayAdvancedQuestionPreview').innerHTML = document.getElementById(prevDiv).innerHTML
+        } else {
+            document.getElementById('displayAdvancedQuestionPreview').innerHTML = " ";
+        }
+
+        divObj.style.display = 'inline';
+        document.getElementById('questionPreview').style.display = 'none';
+    }
+</SCRIPT>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div id="QuestionSection_30436804">
+        <a name="30436804" style="text-decoration:none;"> &nbsp; </a><input type="hidden" name="ts_25"><table width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr><td style="height:23px;">&nbsp;</td></tr>
+<tr><td><table cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="QuestionText">Please drag and rank(1<sup>st</sup> to 3<sup>rd</sup>) the following in order of interest:</td></tr></tbody></table></td></tr><tr><td class="QuestionError"></td></tr>
+<tr><td colspan="3"><span style="display:none;">
+<input type="TEXT" name="r_143613781" size="3" value="1" id="143613781ID"> &nbsp;
+</span><span style="display:none;">
+<input type="TEXT" name="r_143613782" size="3" value="3" id="143613782ID"> &nbsp;
+</span><span style="display:none;">
+<input type="TEXT" name="r_143613783" size="3" value="2" id="143613783ID"> &nbsp;
+</span><table class="Answer horizontalTopPadding" border="0" cellspacing="0" width="100%"><tbody><tr><td><div id="RankDragDrop_30436804" style="padding:0 8px 8px;"><ul class="sortingList ui-sortable" id="RankOrderList_30436804"><li class="ui-state-default dragNDropContainer" ansid"143613781"="" id="DragDrop_143613781" onclick="if(document.getElementById('RankScore_143613781').innerHTML==''){displayRanks_30436804();}"><table width="100%"><tbody><tr><td class="dragNDropDotsImg" style="width:35px;"><img src="/images/addquestion/dragnDrop_dots.png"></td><td class="dragNDropOptionText AnswerText">Skiing</td><td align="right" style="width:30px;"><div class="dragNDropRankText AnswerText"><span id="RankScore_143613781" style="position:relative;left:-1px;top:5px;">1</span></div></td></tr></tbody></table></li><li class="ui-state-default dragNDropContainer" ansid"143613783"="" id="DragDrop_143613783" onclick="if(document.getElementById('RankScore_143613783').innerHTML==''){displayRanks_30436804();}" style="opacity: 1; z-index: 0;"><table width="100%"><tbody><tr><td class="dragNDropDotsImg" style="width:35px;"><img src="/images/addquestion/dragnDrop_dots.png"></td><td class="dragNDropOptionText AnswerText">Biking</td><td align="right" style="width:30px;"><div class="dragNDropRankText AnswerText"><span id="RankScore_143613783" style="position:relative;left:-1px;top:5px;">2</span></div></td></tr></tbody></table></li><li class="ui-state-default dragNDropContainer" ansid"143613782"="" id="DragDrop_143613782" onclick="if(document.getElementById('RankScore_143613782').innerHTML==''){displayRanks_30436804();}"><table width="100%"><tbody><tr><td class="dragNDropDotsImg" style="width:35px;"><img src="/images/addquestion/dragnDrop_dots.png"></td><td class="dragNDropOptionText AnswerText">Snowboarding</td><td align="right" style="width:30px;"><div class="dragNDropRankText AnswerText"><span id="RankScore_143613782" style="position:relative;left:-1px;top:5px;">3</span></div></td></tr></tbody></table></li></ul></div></td></tr> <script> 
+ var update_30436804=function(event,ui) { 
+     var ary=$(this).sortable('toArray'); 
+     for (var i=0;i<ary.length;i++) { 
+         var ele = ary[i].split("_");
+         var ansID = ele[1];
+         var $displayEl = "#RankScore_" + ansID;
+         var $rankEl = "#" + ele[1] + "ID";
+         $($displayEl).html(i+1); 
+         $($rankEl).attr("value",(i+1)); 
+     } 
+ } 
+ $("#RankOrderList_30436804").sortable({opacity:0.75,revert:100,update:update_30436804,tolerance:'intersect'}); 
+     function displayRanks_30436804() { 
+     document.getElementById('RankScore_143613781').innerHTML='1'; 
+     var $rankVal = "#" +143613781+ "ID"; 
+         $($rankVal).attr("value",1); 
+     document.getElementById('RankScore_143613782').innerHTML='2'; 
+     var $rankVal = "#" +143613782+ "ID"; 
+         $($rankVal).attr("value",2); 
+     document.getElementById('RankScore_143613783').innerHTML='3'; 
+     var $rankVal = "#" +143613783+ "ID"; 
+         $($rankVal).attr("value",3); 
+     } 
+</script>
+</tbody></table></td></tr></tbody></table>
+      </div>
+    </body>
+</html>

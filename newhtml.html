@@ -1,0 +1,100 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <title>Vertical Sliding Info Panel With jQuery</title>
+           <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+       
+       
+        <link rel="stylesheet" href="css/editor.css" type="text/css" media="screen"/>
+
+
+        <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".trigger").click(function() {
+                    $(".panel").toggle("fast");
+                    $(this).toggleClass("active");
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Swalinnaire</h1>
+            <h2>...we handle your data</h2>
+            <p>This is an example of simple page that's centered and has a vertical sliding panel on the far right (try it! click on the 'infos' tab that's on the right!). We used jQuery to create this sliding panel (and CSS3 rounded corners because it looks cool)</p>
+            <p><a href="http://spyrestudios.com/how-to-create-a-sexy-vertical-sliding-panel-using-jquery-and-css3/" title="How To Create A Vertical Info Panel With jQuery">Click here to return to the tutorial on SpyreStudios</a></p>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget eros libero. Fusce tempus quam sit amet erat mollis a fermentum nibh imperdiet. Fusce iaculis sapien in turpis aliquet porta. Donec tincidunt gravida tortor, vel dignissim augue convallis sit amet. Aliquam auctor ornare accumsan. Cras convallis elit tincidunt arcu semper egestas. Mauris interdum fringilla nisi. Cras a dapibus lectus. Praesent blandit ullamcorper ornare. Nam hendrerit sollicitudin urna non ultricies. Phasellus condimentum auctor risus, at accumsan tellus tempor vel. Nunc mattis eleifend dolor at adipiscing.</p>
+                <div class="ss-form-editor" id="form-editor">
+                    <div class="ss-page-tab-container">
+                        <div class="ss-page-tab"><span class="ss-page-tab-text" role="heading" id="ss-form-editor-first-page-tab-text">Page 1 of 1</span>
+                        </div>
+                        <div class="ss-page-tab-triangle">
+
+                        </div>
+
+                    </div>
+                    <div id="ss-form-title">
+                        <div class="ss-title-container hovering-textarea-container">
+                            <input class="jfk-textinput ss-title" id="form-title" name="form-title" type="text" value="Untitled spreadsheet" placeholder="" dir="ltr">
+                                <label for="form-title" class="aria-only-help">Form Title</label>
+                        </div>
+                        <div class="ss-desc hovering-textarea-container">
+                            <textarea id="form-description" class="jfk-textinput form-textarea goog-textarea" aria-label="Form Description" placeholder="Form Description" style="overflow-y: hidden; overflow-x: auto; box-sizing: border-box; height: 25px; padding-bottom: 4px;" dir="ltr"></textarea>
+                        </div></div><div id="widget-container"><div><div class="ss-form-page">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div id="ss-bottom-buttons-container">
+                        <div id="ss-add-item-button" class="ss-add-item">
+                            <div role="button" class="goog-inline-block jfk-button jfk-button-standard jfk-button-collapse-right add-item-primary" tabindex="0" value="undefined" style="-webkit-user-select: none;">Add item</div><div class="add-item-type goog-flat-menu-button goog-flat-menu-button-collapse-left goog-inline-block" aria-expanded="false" role="button" tabindex="0" aria-haspopup="true" style="-webkit-user-select: none;"><div class="goog-flat-menu-button-caption goog-inline-block"></div><div class="goog-flat-menu-button-dropdown goog-inline-block">
+
+                                </div></div></div></div></div>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>Sliding Panel</h3>
+            <p>Here's our sliding panel/drawer made using jQuery with the toggle function and some CSS3 for the rounded corners</p>
+            <p>This panel is placed on the right instead of on the left. This could be particularly useful if, <a href="http://spyrestudios.com" title="SpyreStudios">like me</a>, you have a left-aligned website layout.</p>
+            <h3>A Little Something About Me</h3>
+            <img class="right" style="display:none;visibility:hidden;" data-cfsrc="images/jon_image.jpg" alt="Jon Phillips"/><noscript><img class="right" src="images/jon_image.jpg" alt="Jon Phillips"/></noscript>
+            <p>My name's Jon, I'm a freelance designer, blogger, musician. I run SpyreStudios and I specialize in WordPress blogs, CSS, XHTML and PHP</p>
+            <div style="clear:both;"></div>
+            <div class="columns">
+                <div class="colleft">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="http://spyrestudios.com/" title="home">Home</a></li>
+                        <li><a href="http://spyrestudios.com/about/" title="about">About</a></li>
+                        <li><a href="http://spyrestudios.com/portfolio/" title="portfolio">Portfolio</a></li>
+                        <li><a href="http://spyrestudios.com/contact/" title="contact">Contact</a></li>
+                        <li><a href="http://spyrestudios.com" title="blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="colright">
+                    <h3>Social Stuff</h3>
+                    <ul>
+                        <li><a href="http://twitter.com/jophillips" title="Twitter">Twitter</a></li>
+                        <li><a href="http://designbump.com/user/147" title="DesignBump">DesignBump</a></li>
+                        <li><a href="http://digg.com/users/jophillips" title="Digg">Digg</a></li>
+                        <li><a href="http://delicious.com/jon.phillips" title="Del.Icio.Us">Del.Icio.Us</a></li>
+                        <li><a href="http://designmoo.com/users/jonphillips" title="DesignMoo">DesignMoo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <a class="trigger" href="#">infos</a>
+    </body>
+</html>
